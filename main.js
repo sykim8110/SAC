@@ -36,6 +36,7 @@ class Main extends HTMLElement {
 		
 		this._root = this._shadowRoot.getElementById('root')
 		this._eChart = null;
+		this._selectedDataPoint = {}
 		
 	}
 	
@@ -60,6 +61,10 @@ class Main extends HTMLElement {
 	
 	getSeriesType () {
       return this.seriesType 
+    }
+	
+	getSelectedDataPoint () {
+      return this._selectedDataPoint
     }
 	
 	async render () {
@@ -103,8 +108,13 @@ class Main extends HTMLElement {
         series
       }
       eChart.setOption(option)
+	  //eChart의 클릭 이벤트
 	  eChart.on('click', (params) => {
         // https://echarts.apache.org/en/api.html#events.Mouse%20events
+		console.log(["params",params]);
+		const {seriesIndex,seriesName,dataIndex,data,name} = params
+		this._selectedDataPoint = {seriesIndex,seriesName,dataIndex,data,name}
+		//eChart의 클릭 이벤트 시 위젯의 onClick 이벤트와 동일시 함.
         this.dispatchEvent(new Event('onClick'))
       })
     }
