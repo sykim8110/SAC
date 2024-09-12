@@ -58,6 +58,10 @@ class Main extends HTMLElement {
       this.render()
     }
 	
+	getSeriesType () {
+      return this.seriesType
+    }
+	
 	async render () {
       const dataBinding = this.dataBinding
       if (!dataBinding || dataBinding.state !== 'success') {return}

@@ -25,10 +25,35 @@
 		"height": {
 			"type": "integer",
 			"default": 420
+		},
+		"seriesType": {
+		  "type": "string",
+		  "default": "line",
+		  "description": "Series type"
+		}
+		
+	},
+	"methods":{
+		"setSeriesType": {
+		  "description": "Set series type",
+		  "parameters": [
+			{
+			  "name": "value",
+			  "type": "string",
+			  "description": "Series type"
+			}
+		  ]
+		},
+		"getSeriesType": {
+		  "description": "Get series type",
+		  "returnType":"string"
 		}
 	},
-	"methods":{},
-	"events":{},
+	"events":{
+		"onClick": {
+		  "description": "Dispatch when user click a data point on eChart"
+		}
+	},
 	"dataBindings": {
 		"dataBinding": {
 		  "feeds": [

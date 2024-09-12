@@ -48,6 +48,18 @@ class Main extends HTMLElement {
     }
 
     onCustomWidgetDestroy () {
+		if (this._eChart && echarts) { echarts.dispose(this._eChart) }
+    }
+	
+	//차트 타입에 대한 파라메터가 변경될때 차트를 새로 표현하기 위한 구문
+	setSeriesType (seriesType) {
+      this.seriesType = seriesType
+      this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: { seriesType } } }))
+      this.render()
+    }
+	
+	getSeriesType () {
+      return this.seriesType 
     }
 	
 	async render () {
@@ -68,7 +80,7 @@ class Main extends HTMLElement {
           name: measure.label,
           data: [],
           key: measure.key,
-          type: 'line',
+          type: this.seriesType || 'line',
           smooth: true
         }
       })
@@ -91,6 +103,10 @@ class Main extends HTMLElement {
         series
       }
       eChart.setOption(option)
+	  eChart.on('click', (params) => {
+        // https://echarts.apache.org/en/api.html#events.Mouse%20events
+        this.dispatchEvent(new Event('onClick'))
+      })
     }
 }
 
