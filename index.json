@@ -4,10 +4,10 @@
 	"license": "",
 	"id": "com.bsg.sac.exercise.sykim",
 	"version": "1.0.0",
-	"name": "Custom Widget Exercise 01",
+	"name": "Custom Widget Exercise 01_SYKIM",
 	"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAzklEQVQ4jWNgoBAwkqLYOLGjguH//1RGxv+7z8yvymBgYGBgIcm2//8lGRgZlP7/Z5CDiTGRYgA2QLEBOL2gFVrPxsXDYcfAwMDw7cuPQ9dWN/4iyQBebi75vwz/dkPZagwMDLexqaOeF4wT2jcyMjL4Mfz/33tmQVUJsQYgueA/K4RmZCXFBQMfjQNvADwWGBkZHv3/z3CPgZHxOQMDAwPjv9/fGJiZ7sLZDAwM/xkZnzP8/3+PkZHhEaUWwwGjSWL7f0oMYGFgYFCmxAAACtUz95booNoAAAAASUVORK5CYII=",
 	"newInstancePrefix": "ExerciseCustomWidget",
-	"description": "커스텀 위젯 가이드 예시 01",
+	"description": "커스텀 위젯 가이드 예시 01_SYKIM",
 	"webcomponents": [
 						{
 							"kind": "main",
