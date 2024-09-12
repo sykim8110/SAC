@@ -102,5 +102,5 @@ class Main extends HTMLElement {
     }
 }
 
-customElements.define('com-bsg-sac-exercise-sykim-main', Main)
+customElements.define('com-bsg-sac-exercise-sykim-github-main', Main)
 })()
