@@ -17,13 +17,11 @@ class Main extends HTMLElement {
 	}
 	
 	onCustomWidgetResize (width, height) {
-      this.render()
-    }
-	
-	onCustomWidgetBeforeUpdate (changedProps) {
+		this.render()
     }
 
     onCustomWidgetAfterUpdate (changedProps) {
+		this.render()
     }
 
     onCustomWidgetDestroy () {
