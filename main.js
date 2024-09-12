@@ -19,6 +19,9 @@ class Main extends HTMLElement {
 	onCustomWidgetResize (width, height) {
       this.render()
     }
+	
+	onCustomWidgetBeforeUpdate (changedProps) {
+    }
 
     onCustomWidgetAfterUpdate (changedProps) {
     }
@@ -26,8 +29,17 @@ class Main extends HTMLElement {
     onCustomWidgetDestroy () {
     }
 
+/*
     render () {
       this._root.textContent = `Hello Custom Widget clientWidth: ${this.clientWidth}, clientHeight: ${this.clientHeight}`
+    }
+*/
+	async render () {
+      const dataBinding = this.dataBinding
+      if (!dataBinding || dataBinding.state !== 'success') {
+        return
+      }
+      this._root.textContent = JSON.stringify(dataBinding)
     }
 }
 
