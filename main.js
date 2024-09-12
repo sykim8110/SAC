@@ -8,12 +8,13 @@ Hello WebComponent
 </div>
 `
 class Main extends HTMLElement {
-constructor () {
-super()
-this._shadowRoot = this.attachShadow({ mode: 'open' })
-this._shadowRoot.appendChild(template.content.cloneNode(true))
-this._root = this._shadowRoot.getElementById('root')
+	constructor () {
+		super()
+		this._shadowRoot = this.attachShadow({ mode: 'open' })
+		this._shadowRoot.appendChild(template.content.cloneNode(true))
+		this._root = this._shadowRoot.getElementById('root')
+	}
 }
-}
+
 customElements.define('com-bsg-sac-exercise-sykim-main', Main)
 })()
